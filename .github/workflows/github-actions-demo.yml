@@ -24,7 +24,8 @@ jobs:
 
       - run: echo "🍏 This job's status is ${{ job.status }}."
 
-      - name: copy file
-        run: cp -r . ~/express/
+      - name: restart
+        run: pm2 restart ./bin/www
+
 
 
