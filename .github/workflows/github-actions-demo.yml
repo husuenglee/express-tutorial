@@ -27,9 +27,22 @@ jobs:
       - name: npm i
         run: npm i
 
-      - name : rsync
-        run: |
-          rsync -av  --exclude='.git' --exclude='.github' --exclude='.gitignore' . ~/express
+      - name: ping 4
+        run: ping -c 4 secrets.HOST
+
+#      - name: SSH Remote Commands
+#        uses: appleboy/ssh-action@master
+#        with:
+#          host: ${{ secrets.HOST }}
+#          username: ${{ secrets.USERNAME }}
+#          password: ${{ secrets.PASSWORD }}
+#          port: ${{ secrets.PORT }}
+#          script: |
+#            echo "test"
+
+#      - name : rsync
+#        run: |
+#          rsync -av  --exclude='.git' --exclude='.github' --exclude='.gitignore' . ~/express
 
 #      - name : pm2 restart
 #        run: pm2 restart ~/express/bin/www
