@@ -22,7 +22,7 @@ jobs:
         run: |
           ls ${{ github.workspace }}
 
-      - run: echo "🍏 This job's status is ${{ job.status }}, secret host is ${{ secrets.HOST }}"
+      - run: echo "🍏 This job's status is ${{ job.status }}."
 
       - name: npm i
         run: npm i
@@ -30,15 +30,15 @@ jobs:
       - name: ping 4
         run: ping -c 4 ${{ secrets.HOST }}
 
-#      - name: SSH Remote Commands
-#        uses: appleboy/ssh-action@master
-#        with:
-#          host: ${{ secrets.HOST }}
-#          username: ${{ secrets.USERNAME }}
-#          password: ${{ secrets.PASSWORD }}
-#          port: ${{ secrets.PORT }}
-#          script: |
-#            echo "test"
+      - name: SSH Remote Commands
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          script: |
+            ls ~/
 
 #      - name : rsync
 #        run: |
