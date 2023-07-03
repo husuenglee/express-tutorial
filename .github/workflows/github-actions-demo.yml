@@ -8,13 +8,15 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v3
 
-      - name: pwd
-        uses: pwd
-
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
 
       - name: who am i
-        run: whoami
+        run: |
+          whoami
+
+      - name: pwd
+        run: |
+          pwd
 
       - name: List files in the repository
         run: |
@@ -22,15 +24,12 @@ jobs:
 
       - run: echo "🍏 This job's status is ${{ job.status }}."
 
+      - name: npm i
+        run: npm i
+
       - name : rsync
         run: |
           rsync -av  --exclude='.git' --exclude='.github' --exclude='.gitignore' . ~/express
-
-      - name : cd
-        run: cd ~/express
-
-      - name : npm i
-        run: npm i
 
 #      - name : pm2 restart
 #        run: pm2 restart ~/express/bin/www
