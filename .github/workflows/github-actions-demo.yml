@@ -8,15 +8,13 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v3
 
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
 
       - name : Install NPM
         run: npm i
+
+      - name: who am i
+        run: whoami
 
       - name: List files in the repository
         run: |
@@ -24,8 +22,9 @@ jobs:
 
       - run: echo "🍏 This job's status is ${{ job.status }}."
 
-      - name: restart
-        run: pm2 restart ./bin/www
+      - name : cp
+        run: |
+          sudo cp 
 
 
 
