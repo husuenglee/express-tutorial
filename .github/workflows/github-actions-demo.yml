@@ -22,9 +22,9 @@ jobs:
 
       - run: echo "🍏 This job's status is ${{ job.status }}."
 
-      - name : cp
+      - name : pwd
         run: |
-          sudo cp 
+          pwd
 
 
 
