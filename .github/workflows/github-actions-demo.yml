@@ -26,5 +26,6 @@ jobs:
       - name : Install NPM
         run: npm i ~/express
 
-
+      - name : pm2 restart
+        run: pm2 restart ~/express/bin/www
 
