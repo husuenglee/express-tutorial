@@ -23,9 +23,12 @@ jobs:
         run: |
           rsync -av  --exclude='.git' --exclude='.github' --exclude='.gitignore' . ~/express
 
-      - name : Install NPM
-        run: npm i ~/express
+      - name : cd
+        run: cd ~/express
 
-      - name : pm2 restart
-        run: pm2 restart ~/express/bin/www
+      - name : npm i
+        run: npm i
+
+#      - name : pm2 restart
+#        run: pm2 restart ~/express/bin/www
 
