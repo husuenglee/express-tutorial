@@ -22,13 +22,13 @@ jobs:
         run: |
           ls ${{ github.workspace }}
 
-      - run: echo "🍏 This job's status is ${{ job.status }}."
+      - run: echo "🍏 This job's status is ${{ job.status }}, secret host is ${{ secrets.HOST }}"
 
       - name: npm i
         run: npm i
 
       - name: ping 4
-        run: ping -c 4 secrets.HOST
+        run: ping -c 4 ${{ secrets.HOST }}
 
 #      - name: SSH Remote Commands
 #        uses: appleboy/ssh-action@master
