@@ -38,7 +38,7 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           script: |
-            ls ~/
+            ls ~
 
 #      - name : rsync
 #        run: |
