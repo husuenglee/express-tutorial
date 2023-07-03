@@ -31,6 +31,6 @@ jobs:
         run: |
           rsync -av  --exclude='.git' --exclude='.github' --exclude='.gitignore' . ~/express
 
-      - name : pm2 restart
-        run: pm2 restart ~/express/bin/www
+#      - name : pm2 restart
+#        run: pm2 restart ~/express/bin/www
 
